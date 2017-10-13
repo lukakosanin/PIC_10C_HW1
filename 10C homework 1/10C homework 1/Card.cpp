@@ -109,7 +109,7 @@ double Card::get_value()const
 }
 void Card::print()const
 {
-	cout << get_spanish_rank() << " de " << get_spanish_suit() << endl;
+	cout << get_spanish_rank() << " de " << get_spanish_suit() << ", ";
 }
 Hand::Hand()
 {
@@ -129,6 +129,13 @@ double Hand::sum()const
 vector<Card> Hand::get_cards()const
 {
 	return hand;
+}
+void Hand::delete_hand()
+{
+	for (int i = hand.size() - 1; i >= 0; i--)
+	{
+		hand.pop_back();
+	}
 }
 Player::Player(int m)
 {
@@ -167,4 +174,8 @@ Hand Player::get_hand()
 void Player::add_card()
 {
 	cards.draw();
+}
+void Player::clear_hand()
+{
+	cards.delete_hand();
 }

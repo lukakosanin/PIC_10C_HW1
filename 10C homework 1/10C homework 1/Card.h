@@ -50,6 +50,7 @@ public:
 	void draw();
 	double sum() const;
 	vector<Card> get_cards()const;
+	void delete_hand();
 private:
 	vector<Card> hand;
 };
@@ -66,6 +67,7 @@ public:
 	void print_cards() const;
 	Hand get_hand();
 	void add_card();
+	void clear_hand();
 private:
 	int money;
 	Hand cards;
