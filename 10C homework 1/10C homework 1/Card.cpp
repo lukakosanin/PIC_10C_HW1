@@ -36,6 +36,8 @@ string Card::get_spanish_rank() const
 		return "Caballo";
 	else if (rank == 9)
 		return "Rey";
+	else
+		return "not a card";
 }
 string Card::get_spanish_suit() const
 {
@@ -47,7 +49,8 @@ string Card::get_spanish_suit() const
 		return "Espadas";
 	else if (suit == 3)
 		return "Bastos";
-
+	else
+		return "not a suit";
 
 }
 int Card::get_rank() const
@@ -64,6 +67,7 @@ int Card::get_rank() const
 		return 11;
 	else if (rank == 9)
 		return 12;
+	else return 0;
 }
 string Card::get_english_suit()const
 {
@@ -75,6 +79,8 @@ string Card::get_english_suit()const
 		return "Swords";
 	else if (suit == 3)
 		return "Clubs";
+	else
+		return "not a suit";
 }
 bool Card::operator<(Card card2) const
 {
@@ -115,7 +121,7 @@ void Hand::draw()
 }
 double Hand::sum()const
 {
-	double total;
+	double total =0.0;
 	for (auto x : hand)
 		total += x.get_value();
 	return total;
